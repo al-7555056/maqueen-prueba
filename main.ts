@@ -1,6 +1,5 @@
 input.onButtonPressed(Button.A, function () {
     Empezar = "on"
-    music.playMelody("C5 - - - - - - - ", 120)
     basic.showIcon(IconNames.Happy)
 })
 let Empezar = ""
@@ -27,6 +26,13 @@ basic.forever(function () {
         basic.pause(2000)
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
         maqueen.motorStop(maqueen.Motors.All)
+        basic.pause(5000)
+    }
+})
+basic.forever(function () {
+    if (Empezar == "on") {
+        music.playMelody("A F E F D G E F ", 120)
+        music.playMelody("B A G A G F A C5 ", 120)
         basic.pause(5000)
     }
 })
